@@ -12,8 +12,8 @@ defmodule Todos.TodoControllerTest do
       "todos" => [%{
         "title" => todo.title,
         "description" => todo.description,
-        "inserted_at" => todo.inserted_at |> Timex.format("{ISO:Extended:Z}"),
-        "updated_at" => todo.updated_at
+        "inserted_at" => Timex.format!(todo.inserted_at, "{ISO:Extended}"),
+        "updated_at" => Timex.format!(todo.updated_at, "{ISO:Extended}")
       }]
     }
   end
