@@ -1,5 +1,8 @@
 # Todos
 
+Output from this [tutorial](https://robots.thoughtbot.com/building-a-phoenix-json-api)
+
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
