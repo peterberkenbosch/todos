@@ -1,5 +1,6 @@
 defmodule Todos.TodoControllerTest do
   use Todos.ConnCase
+  use Timex
 
   test "#index renders a list of todos" do
     conn = build_conn()
@@ -11,8 +12,8 @@ defmodule Todos.TodoControllerTest do
       "todos" => [%{
         "title" => todo.title,
         "description" => todo.description,
-        "inserted_at" => Ecto.DateTime.to_iso8601(todo.inserted_at),
-        "updated_at" => Ecto.DateTime.to_iso8601(todo.updated_at)
+        "inserted_at" => todo.inserted_at |> Timex.format("{ISO:Extended:Z}"),
+        "updated_at" => todo.updated_at
       }]
     }
   end
